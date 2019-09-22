@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Juego de Baco</title>
+    <meta name="description" content="Juego de Baco es un recopilatorio de juegos picantes para fiestas">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,700" media="all">
+    <link rel="stylesheet" href="ripple.min.css" media="all">
+    <link rel="stylesheet" href="main.css" media="all">
+    <link rel="manifest" href="manifest.webmanifest">
+
+    <!-- icons and theming -->
+    <link rel="apple-touch-icon" sizes="180x180" href="media/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="media/icons/safari-pinned-tab.svg" color="#b71c37">
+    <meta name="msapplication-TileColor" content="#b71c37">
+    <meta name="msapplication-TileImage" content="mstile-144x144.png">
+    <meta name="theme-color" content="#D9F4FA">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+</head>
+<body class="noselect">
+  <header>
+    <h1>¿A qué quieres jugar?</h1>
+  </header>
+  <main class="chose-topics-div" id="topics-div">
+    <div class="topics-div">
+      <div class="topic-div" onclick="selectTopic('yonunca')">
+        <h2>Yo nunca</h2>
+        <ol>
+          <li>Cualquiera <b>lee</b> en voz alta.</li>
+          <li>Quien lo haya hecho <b>bebe</b>.</li>
+        </ol>
+      </div>
+      <div class="topic-div" onclick="selectTopic('abebersehadicho')">
+        <h2>¡A beber se ha dicho!</h2>
+        <ol>
+          <li>Alguien <b>lee</b> en voz alta.</li>
+          <li>Haced lo que diga la frase.</li>
+          <li>Si <b>pierdes</b> una prueba <b>bebe</b>.</li>
+        </ol>
+      </div>
+      <div class="topic-div" onclick="selectTopic('lamoneda')">
+        <h2>La moneda</h2>
+        <ol>
+          <li><b>Responde</b> la pregunta sin leerla en voz alta.</li>
+          <li>Lanza una <b>moneda</b>.</li>
+          <li>Si sale <b>cara</b> dices cual era la pregunta.</li>
+          <li>Le toca al <b>siguiente</b>.</li>
+        </ol>
+      </div>
+      <div class="topic-div" onclick="selectTopic('perdiendolaropa')">
+        <h2>Perdiendo la ropa</h2>
+        <ol>
+          <li>Alguien <b>lee</b> la prueva en voz alta.</li>
+          <li>Si <b>pierdes</b> la prueba tienes que quitarte una prenda.</li>
+        </ol>
+      </div>
+      <div class="topic-div" onclick="selectTopic('entrelaespadaylapared')">
+        <h2>Entre la espada y la pared</h2>
+        <ol>
+          <li><b>Lee</b> y <b>responde</b> la pregunta.</li>
+          <li><b>Justifica</b> tu respuesta.</li>
+          <li>Le toca al <b>siguiente</b>.</li>
+        </ol>
+      </div>
+      <div class="topic-div" onclick="selectTopic('bodytwister')">
+        <h2>Body Twister</h2>
+        <ol>
+          <li>Alguno <b>lee</b> en voz alta.</li>
+          <li>Pon la parte del cuerpo que se indique donde se indique.</li>
+        </ol>
+      </div>
+      <div class="topic-div" onclick="selectTopic('quienes')">
+        <h2>Toc, Toc.. ¿Quién es?</h2>
+        <ol>
+          <li><b>Piensa en una persona</b> y responde las preguntas en voz alta.</li>
+          <li>Los otros tienen que intentar <b>adivinar quien es</b> lo antes posible.</li>
+        </ol>
+      </div>
+    </div>
+    <button id="share-button" type="share" class="share-button ripple" name="Compartir" onclick="share();" hidden>Compartir</button>
+  </main>
+
+  <script src="index.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+      .then(function(registration) {
+        console.log('Registration successful, scope is:', registration.scope);
+      })
+      .catch(function(error) {
+        console.log('Service worker registration failed, error:', error);
+      });
+    }
+  </script>
+</body>
+</html>
