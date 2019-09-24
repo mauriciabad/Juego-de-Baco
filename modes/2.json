@@ -1,0 +1,17 @@
+[
+    "${p[0]}, bebe 1 trago",
+    "El más bajo bebe ${random(1,3)} tragos del más alto",
+    "El más joven bebe 2 tragos",
+    "Si te gusta el reggaeton bebe ${random(2,3)} tragos",
+    "Si crees que ${p[0]} besaría a ${p[1]} bebe ${random(2,3)} tragos",
+    "El que tenga el vaso más lleno bebe ${random(2,3)} tragos",
+    "Si te queda menos de la mitad del vaso terminalo",
+    "El que señale último a ${p[0]} bebe",
+    "Por cada uno que crea posible un trío entre ${p[0]}, ${p[1]} y ${p[2]} beben un trago",
+    "${p[0]}, repite todo lo quediga ${p[1]}. Cada vez que te olvides bebe un poco",
+    "${p[0]} pon el dedo en la nariz de ${p[1]} y ${p[1]} en la oreja de ${p[0]}",
+    "${p[0]} finje un orgasmo y/o bebe ${random(2,5)} tragos",
+    "Votad quien bebe ${random(2,3)} tragos",
+    "Si tu categoría porno preferida és teenagers bebe 2 tragos",
+    "Si eres mayor de edad bebe"
+]

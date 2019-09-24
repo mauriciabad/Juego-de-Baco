@@ -1,20 +1,15 @@
-var CACHE_NAME = 'baco-v0.3.1';
+var CACHE_NAME = 'baco-v0.3.3';
 
 var urlsToCache = [
   '.',
+  'main.css',
   'index.html',
   'index.js',
-  'main.css',
   'playing.html',
   'playing.js',
+  'editor.html',
+  'editor.js',
   'media/house.svg',
-  'modes/abebersehadicho.json',
-  'modes/bodytwister.json',
-  'modes/entrelaespadaylapared.json',
-  'modes/lamoneda.json',
-  'modes/perdiendolaropa.json',
-  'modes/quienes.json',
-  'modes/yonunca.json',
   'ripple.min.css',
   'https://fonts.googleapis.com/css?family=Quicksand:300,400,700'
 ];

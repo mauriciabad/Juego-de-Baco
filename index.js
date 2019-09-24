@@ -6,15 +6,13 @@ if (navigator.share) {
 function selectTopic(mode){
   sessionStorage.mode = mode;
   hideUI(function () {
-    history.pushState(null, 'Playing '+mode, 'playing.html');
-    location.replace("playing.html");
+    window.location.href = 'playing.html';
   });
 }
 
 function hideUI(callback) {
-  document.getElementsByTagName('header')[0].style.transform = 'translateY(-100%)';
   document.getElementsByTagName('main')[0].style.opacity = '0';  
-  setTimeout(callback, 750)
+  setTimeout(callback, 200)
 }
 
 function share() {

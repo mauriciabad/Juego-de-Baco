@@ -27,39 +27,35 @@
 <body class="noselect">
   <header class="header-flex">
     <button type="button" name="inicio" id="home_button" 
-      class="ripple" onclick="changeMode()" 
+      class="ripple" onclick="back()" 
       title="Cambiar modo de juego">
-      <img src="media/outline-home-24px.svg" alt="Inicio">
+      <img src="media/outline-arrow_back-24px.svg" alt="Inicio">
     </button>
-    <input type="text" id="players_input" 
-    placeholder="Ejemplo: Yo Pol Marta Judith Alvaro Claudia"
-    onblur="getPlayers(); if(playersOK()) document.getElementById('phrase').textContent = 'Muy bien, toca aquí para continuar';" onkeypress="if (event.keyCode == 13) this.blur()" autofocus>
-    <button type="button" name="añadir" id="add_button" 
-      class="ripple" onclick="openEditor()" 
-      title="Añadir frases">
-      <img src="media/outline-add_circle_outline-24px.svg" alt="Añadir">
+    <h1>Crear frase</h1>
+    <button type="button" name="ayuda" id="help_button" 
+      class="ripple" onclick="showHelp()" 
+      title="Ayuda">
+      <img src="media/outline-help_outline-24px.svg" alt="Ayuda">
     </button>
   </header>
 
-  <main id="phrase_div" onclick="nextPhrase()">
-    <p id="phrase">Escribid vuestros nombres arriba</p>
+  <main>
+    <div id="help-div" onclick="hideHelp();">
+      <h2>Nombres de los participantes:</h2>
+      <p>${p[0]}, ${p[1]}, ${p[2]}... => Nombre1, Nombre2, Nombre3...</p>
+      <h2>Número aleatorio:</h2>
+      <p>${random(1,100)}, ${random(1,100)}, ${random(1,100)},... => 71, 12, 39...</p>
+      <span class="cheveron-up"></span>
+    </div>
+    <form action="addPhrase.php" method="post" id="phrase_form" onclick="this.children[0].focus();">
+      <p name="phrase" id="phrase-editable" maxlength="200" contenteditable="true" onfocus="document.execCommand('selectAll',false,null)">¡Escribe aquí tu frase!</p>
+      <!-- <input type="number" name="dificulty" id="dificulty" placeholder="0 - 5"> -->
+      <input type="submit" value="Enviar  >>" class="action-button">
+    </form>
   </main>
-  <div class="ripple" id="prev_div" onclick="repeatLastPhrase();"></div>
 
-  <button type="button" name="dislike" id="down_vote_button" 
-    class="ripple vote-button" onclick="vote(phrases[phraseIndex].id,0)" 
-    title="No me gusta">
-    <img src="media/outline-thumb_down-24px.svg" alt="No me gusta">
-    <span id="down_vote_text"></span>
-  </button>
-  <button type="button" name="like" id="up_vote_button" 
-    class="ripple vote-button" onclick="vote(phrases[phraseIndex].id,1)" 
-    title="Me gusta">
-    <img src="media/outline-thumb_up-24px.svg" alt="Me gusta">
-    <span id="up_vote_text"></span>
-  </button>
 
-  <script src="playing.js"></script>
+  <script src="editor.js"></script>
 </body>
 
 </html>
